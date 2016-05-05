@@ -1,0 +1,114 @@
+1. Explain the concept of Hybrid Mobile App Development
+
+    Hybrid Apps make it possible to embed HTML5 apps inside a thin native container, combining the best (and worst)
+    elements of Native and HTML5 apps.
+
+    Like the websites on the internet, hybrid mobile apps are built with a combination of web technologies like HTML, CSS,
+    and JavaScript. The key difference is that hybrid apps are hosted inside a native application that utilizes a mobile platform’s WebView.
+
+2. Explain the Pros & Cons of using Hybrid Mobile App Development compared to Native App Development
+
+ Hybrid
+    Pros
+
+    Simplifies business logic into a single code base.
+    Deploys to multiple platforms with minimal special cases.
+    Eliminates need to interface directly with device drivers by using APIs and plugins.
+    Single framework, meaning you don’t have to use multiple IDEs with expert knowledge.
+
+    Cons
+    Not all native features will be available for use.
+    Tapping into new features will not be immediate, and sometimes non-existent depending on the maintainer of the framework.  Also there’s a good chance they will be buggy.
+    May not provide true native experience considering the user interaction is typically homogenous across all platforms.
+    Lacking knowledge in the native frameworks will prevent you from debugging undocumented issues.
+
+ Native
+
+    Pros
+
+    All vendor tools will be available to you (provided they are documented).
+    More performant than alternatives that compile into native or interfaces with web views.
+    Grants you access to device-specific assets which will stay consistent with the device’s visual standards.
+    Greater chance your app will not get rejected due to poor user experience.
+
+    Cons
+
+    More costly due to high maintenance of multiple code bases.
+    May require more developers with experience in each framework to maintain.
+    Very high chance you have to stay on top of vendor changelogs to make sure you app is compatible with the latest
+    version of the device (most common with Apple devices).
+
+3. Explain about the "building blocks" involved in an ionic Hybrid Application
+
+    Underneath a ionic hybrid app there lay 3 building blocks :
+    - the code we write
+    - phone gap (mobile application development framework ) now cordova
+    - phone gap plug ins
+
+    How does it work > the phone gap app contains > web app which is powered by >> an HTML rendering engine>>
+    which talks to the phonegap plugins that access the native features of the phone
+
+    Ionic is an free and open source library of mobile-optimized HTML, CSS and JS components, gestures, and tools
+    for building highly interactive apps.
+    Ionic is a complete open-source SDK for hybrid mobile app development
+    Built on top of AngularJS and Apache Cordova.
+
+4. Explain and demonstrate ways to debug Hybrid Mobile Applications Running on a real device
+
+    In order to debug we need the physical phone with the app installes
+    A cable to connect the phone to the computer
+    Google chrome accessing: chrome://inspect/#devices
+    Inspect the app live
+
+    Note: this is only possible because the hybrid app uses a webview so naturally it can connect to the browser to "view"
+    the app from the phone. Preety awesome!
+
+5. Explain when and why CORS (Cross-origin resource sharing) is a problem for Hybrid Mobile Applications.
+
+    Notes to Cors:
+    A resource makes a cross-origin HTTP request when it requests a resource from a different domain than
+    the one which the first resource itself serves. For example, an HTML page served from http://domain-a.com
+    makes an <img> src request for http://domain-b.com/image.jpg. Many pages on the web today load resources like
+    CSS stylesheets, images and scripts from separate domains.
+
+    For security reasons, browsers restrict cross-origin HTTP requests initiated from within scripts.  For example,
+    XMLHttpRequest follows the same-origin policy. So, a web application using XMLHttpRequest could only make HTTP
+    requests to its own domain. To improve web applications, developers asked browser vendors to allow XMLHttpRequest
+     to make cross-domain requests.
+
+     The W3C Web Applications Working Group recommends the new Cross-Origin Resource Sharing (CORS) mechanism.
+      CORS gives web servers cross-domain access controls, which enable secure cross-domain data transfers.
+      Modern browsers use CORS in an API container - such as XMLHttpRequest - to mitigate risks of cross-origin
+      HTTP requests.
+
+     We must ask the server for approval before we can access the resource, in the form of an HTTP OPTIONS request header.
+
+6. Explain how and why it is possible for a Hybrid Application to access native phone devices like location, calendar etc.
+
+    Plugins are an integral part of the cordova ecosystem. They provide an interface for Cordova and native components
+    to communicate with each other and bindings to standard device APIs. This enables you to invoke native code from JavaScript.
+
+    Apache Cordova project maintains a set of plugins called the Core Plugins.
+    These core plugins provide your application to access device capabilities such as battery, camera, contacts, etc.
+
+    In addition to the core plugins, there are several third-party plugins which provide additional bindings to features
+     not necessarily available on all platforms. You can search for Cordova plugins using plugin search or npm. You can
+     also develop your own plugins, as described in the Plugin Development Guide. Plugins may be necessary, for example,
+      to communicate between Cordova and custom native components.
+
+      : When you create a Cordova project it does not have any plugins present. This is the new default behavior. Any
+      plugins you desire, even the core plugins, must be explicitly added.
+
+ 7. Explain using an example the "fundamentals" of an ionic application.
+
+    We need to set up an ionic project whoch uses CORDOVA
+    Optionally set up SASS
+    Set it up for either Android or iOS
+    set up ngCordova if we wish to use it
+    set up the api keys if we need them
+
+    run on browser with ionic serve
+    run on device with ionic run android
+
+ 8. Explain using an example how your Hybrid Application communicates with a backend and how CORS problems were solved (if any)
+
